@@ -1,0 +1,16 @@
+<section data-ng-controller="HomeController">
+	<form ng-submit="submit(user1, user2)" flex>
+      <div layout="vertical" layout-sm="horizontal" layout-padding layout-align="left center">
+        <span class="title">User 1: </span>
+        <input label="Tab Name" ng-model="user1"></input> Vs User2: 
+        <input label="Search (#awesome)" ng-model="user2"></input>
+        <button class="md-primary" type="submit" style="max-height: 40px; margin-top:20px;" ng-disabled="!user1 || !user2" aria-label="Add New Search">Twitter search</button>
+      </div>
+    </form>
+
+    <div>
+    	<span ng-show="errors"> There was an error with the user name </span>
+    	<linechart data="data" options="options" mode="" width="600" height="450"></linechart>
+    </div>
+</section>
+<script type="text/javascript" src="line-chart.min.js"></script>
