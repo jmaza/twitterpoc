@@ -11,6 +11,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
  		$scope.nombreusu1 = 'User 1';
     	$scope.nombreusu2 = 'User 2';
     	$scope.errors = false;
+    	$scope.user_err = 'no error';
 
     	 $scope.data = [
 		  {x: 0, value: 0, otherValue: 0},
@@ -93,7 +94,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
 		Socketclient.on('errors', function(data){
 			console.log('llamado');
-
+			$scope.user_err = data;
 			$scope.errors = true;
 		});
 

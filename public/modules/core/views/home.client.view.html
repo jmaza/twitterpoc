@@ -1,16 +1,30 @@
 <section data-ng-controller="HomeController">
-	<form ng-submit="submit(user1, user2)" flex>
-      <div layout="vertical" layout-sm="horizontal" layout-padding layout-align="left center">
-        <span class="title">User 1: </span>
-        <input label="Tab Name" ng-model="user1"></input> Vs User2: 
-        <input label="Search (#awesome)" ng-model="user2"></input>
-        <button class="md-primary" type="submit" style="max-height: 40px; margin-top:20px;" ng-disabled="!user1 || !user2" aria-label="Add New Search">Twitter search</button>
-      </div>
+	 <div data-ng-show="!authentication.user">
+    <a href="/#!/signup">Signup</a>
+    <a href="/#!/signin">Sign In</a>
+  </div>
+   <div data-ng-show="authentication.user" style="margin-top: 40px">
+	<form class="form-inline" ng-submit="submit(user1, user2)" flex>
+      
+       <div><h3>Enter Two Twitter Usernames without the @ and compare!</h3> </div>
+       <hr>
+        <div class="form-group">
+        	<label for="user1id">User 1:</label>
+        	<input class="form-control"  id="user1id" ng-model="user1"></input>
+        </div>  
+        <div class="form-group"> <div style="max-height: 20px"><div class="well well-sm"> vs </div></div></div>
+        <div class="form-group">
+        	<label for="user1id">User 2:</label>
+        	<input class="form-control" label="Search (#awesome)" ng-model="user2"></input>
+        </div>
+        <button class="btn btn-info" type="submit" ng-disabled="!user1 || !user2" >Twitter search</button>
+      
     </form>
-
+    <hr>
     <div>
-    	<span ng-show="errors"> There was an error with the user name </span>
+    	<div class="alert alert-danger" role="alert" ng-show="errors"> {{user_err}} </div>
     	<linechart data="data" options="options" mode="" width="600" height="450"></linechart>
     </div>
+  </div>
 </section>
 <script type="text/javascript" src="line-chart.min.js"></script>
