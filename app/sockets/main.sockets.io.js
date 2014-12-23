@@ -5,10 +5,10 @@ var http = require('http'),
 //var socket = require('socket.io-client')('http://localhost:3000');
 
 var T = new Twit({
-  consumer_key: 'jYLEYGgABYVQ3ZKXGGMLuhyy4',
-  consumer_secret: 'dkWRWeP9zqH32Lv5adqRhgKv3vi6NGt9MdkOwi5S3dIFxLEyLz',
-  access_token: '47284658-3tgWhKqGzCHe3Ot9lxBXi0NvkRW8WpkAwDq27NMFS',
-  access_token_secret: 'AkQi4f6QWPkhZQosr9wyYEJUqTK7AeDB7hnCGY37po517'
+  consumer_key: '...',
+  consumer_secret: '...',
+  access_token: '...',
+  access_token_secret: '...'
 });
 
 //wire up the code for handling sockets connections
